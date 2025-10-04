@@ -61,16 +61,58 @@
       margin: 10px 0;
       color: #fff;
       font-weight: 600;
-      text-align: center;
     }
 
     .bio {
       font-size: 1rem;
       color: #fff;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
       line-height: 1.5;
       font-weight: 400;
-      text-align: center;
+    }
+
+    .transferencia {
+      background-color: rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 12px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .small-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      background-color: #fff;
+      color: #c39170;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    .small-btn:hover {
+      transform: scale(1.05);
+      background-color: #f8f0ec;
+    }
+
+    .links-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
 
     .link {
@@ -87,10 +129,8 @@
       font-weight: 600;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       transition: transform 0.2s ease, background-color 0.2s ease;
-      border: none;
-      cursor: pointer;
       width: 100%;
-      max-width: 320px;
+      max-width: 360px;
     }
 
     .link:hover {
@@ -119,7 +159,7 @@
     }
 
     /* Mensaje flotante */
-    #copied-msg, #datos-msg {
+    #copied-msg {
       position: fixed;
       bottom: 20px;
       left: 50%;
@@ -133,7 +173,7 @@
       display: none;
       animation: fadeInOut 2.5s ease;
       max-width: 85%;
-      text-align: left;
+      text-align: center;
       z-index: 1000;
     }
 
@@ -141,21 +181,6 @@
       0% { opacity: 0; transform: translate(-50%, 20px); }
       10%, 90% { opacity: 1; transform: translate(-50%, 0); }
       100% { opacity: 0; transform: translate(-50%, 20px); }
-    }
-
-    .button-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-
-    .button-row .link {
-      flex: 1 1 150px;
-      max-width: 180px;
     }
 
     /* 📱 Diseño adaptable */
@@ -182,13 +207,8 @@
         height: 100px;
       }
 
-      .button-row {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .button-row .link {
-        max-width: 100%;
+      .transferencia {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -200,64 +220,56 @@
     </div>
 
     <h1>Santorini Clothes</h1>
+    <p class="bio">Elegancia Sutil en cada detalle</p>
 
-    <p class="bio">
-      Estilo Sutil en cada detalle
-    </p>
-
-    <!-- Botones Alias y Datos de Cuenta -->
-    <div class="button-row">
-      <button class="link" onclick="copiarAlias()">
-        <i class="fas fa-clone"></i> Copiar Alias
-      </button>
-
-      <button class="link" onclick="mostrarDatos()">
-        <i class="fas fa-info-circle"></i> Datos de la cuenta
-      </button>
+    <div class="transferencia">
+          DATOS DE TRANSFERENCIA<br>
+      🧾 <strong>Titular:</strong> Nadia Macarena Sequeira<br>
+      🆔 <strong>CUIL:</strong> 27-39018932-7<br>
+      🏦 <strong>Banco:</strong> Naranja X<br>
+      💳 <strong>Alias:</strong> SANTORINICLOTHES
     </div>
 
-    <!-- Resto de los botones -->
-    <a class="link" href="https://www.instagram.com/santoriniclothes.sc/" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
+    <button class="small-btn" onclick="copiarAlias()">
+      <i class="fas fa-clone"></i> Copiar Alias
+    </button>
 
-    <a class="link" href="https://wa.me/5493536568085" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp Directo
-    </a>
+    <div class="links-wrapper">
+      <a class="link" href="https://www.instagram.com/santoriniclothes.sc/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
 
-    <a class="link" href="santoriniclothes.vcf" download>
-      <i class="fas fa-address-card"></i> Guardar Contacto
-    </a>
+      <a class="link" href="https://wa.me/5493536568085" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp 
+      </a>
 
-    <a class="link" href="https://www.santoriniclothes.com.ar" target="_blank">
-      <i class="fas fa-store"></i> Tienda Online
-    </a>
+      <a class="link" href="santoriniclothes.vcf" download>
+        <i class="fas fa-address-card"></i> Guardar Contacto
+      </a>
 
-    <a class="link" href="https://maps.google.com?q=9+de+Julio+629+Villa+María+Córdoba" target="_blank">
-      <i class="fas fa-map-marker-alt"></i> Como Llegar
-    </a>
+      <a class="link" href="https://www.santoriniclothes.com.ar" target="_blank">
+        <i class="fas fa-store"></i> Tienda Onine
+      </a>
 
-    <a class="link" href="#" target="_blank">
-      <i class="fas fa-credit-card"></i> Formas de Pago
-    </a>
+      <a class="link" href="https://www.google.com/search?sca_esv=972409babe1b9eaa&rlz=1C1ONGR_esAR1175AR1175&sxsrf=AE3TifN0X09lmmXjxuA-sXkBOwaj2xBIrA:1759620773560&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-Ew6OCVs64d0LIUuWTr4UUxj5M_dvaGryZziGcRpkcw45juGakOEb-tKnPKbO2Wpng4bQKlIpWCPM4J4P26t9vqXqqyXvwW-u0ofQLTkZXBwU7IXT5w%3D%3D&q=Santorini+Clothes+Opiniones&sa=X&ved=2ahUKEwjJ2ZaZ2ouQAxXqGbkGHdvaPF8Q0bkNegQIIxAE&biw=1366&bih=607&dpr=1#lrd=0x95cc43005b189161:0x1aca413ffa02260b,3,,,," target="_blank">
+        <i class="fas fa-map-marker-alt"></i> Como Llegar
+      </a>
 
-    <a class="link" href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank">
-      <i class="fas fa-star"></i> Dejános tu reseña en Google
-    </a>
+      <a class="link" href="#" target="_blank">
+        <i class="fas fa-credit-card"></i> Formas de Pago
+      </a>
+
+      <a class="link" href="https://www.google.com/search?q=Santorini+Clothes+Opiniones&rlz=1C1ONGR_esAR1175AR1175&oq=sa&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIICAEQRRgnGDsyBggCEEUYOzIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGD3SAQgxMjUxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8#lrd=0x95cc43005b189161:0x1aca413ffa02260b,3,,,," target="_blank">
+        <i class="fas fa-star"></i> Dejános tu reseña en Google
+      </a>
+    </div>
   </div>
 
   <footer>
     © 2025 Creado por <strong>MAOBE Digital</strong>
   </footer>
 
-  <!-- Mensajes flotantes -->
   <div id="copied-msg">✅ Alias copiado: SANTORINICLOTHES</div>
-
-  <div id="datos-msg">
-    🧾 <strong>Titular:</strong> Nadia Macarena Sequeira<br>
-    🆔 <strong>CUIL:</strong> 27-39018932-7<br>
-    🏦 <strong>Banco:</strong> Naranja X
-  </div>
 
   <script>
     function copiarAlias() {
@@ -266,12 +278,6 @@
         msg.style.display = "block";
         setTimeout(() => { msg.style.display = "none"; }, 2500);
       });
-    }
-
-    function mostrarDatos() {
-      const msg = document.getElementById("datos-msg");
-      msg.style.display = "block";
-      setTimeout(() => { msg.style.display = "none"; }, 3500);
     }
   </script>
 </body>
