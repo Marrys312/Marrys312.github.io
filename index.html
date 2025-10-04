@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santorini Clothes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fuente Josefin Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 600;
+      background-color: #c39170;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #c39170;
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      padding: 30px 25px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      margin-top: 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin: 10px 0;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .bio {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      background-color: #fff;
+      color: #c39170;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .link:hover {
+      transform: scale(1.05);
+      background-color: #f8f0ec;
+    }
+
+    .link i {
+      font-size: 1.4rem;
+    }
+
+    /* Colores originales */
+    .fa-whatsapp { color: #25D366; }
+    .fa-instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    footer {
+      margin: 25px 0;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-weight: 400;
+    }
+
+    /* Mensaje flotante */
+    #copied-msg, #datos-msg {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255,255,255,0.95);
+      color: #c39170;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-weight: 600;
+      display: none;
+      animation: fadeInOut 2.5s ease;
+      max-width: 85%;
+      text-align: left;
+      z-index: 1000;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translate(-50%, 20px); }
+      10%, 90% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, 20px); }
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .button-row .link {
+      flex: 1 1 150px;
+      max-width: 180px;
+    }
+
+    /* 📱 Diseño adaptable */
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .bio {
+        font-size: 0.9rem;
+      }
+
+      .link {
+        font-size: 0.95rem;
+        padding: 13px;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+
+      .button-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button-row .link {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="avatar">
+      <img src="logo.jpeg" alt="Santorini Clothes Logo">
+    </div>
+
+    <h1>Santorini Clothes</h1>
+
+    <p class="bio">
+      Estilo Sutil en cada detalle
+    </p>
+
+    <!-- Botones Alias y Datos de Cuenta -->
+    <div class="button-row">
+      <button class="link" onclick="copiarAlias()">
+        <i class="fas fa-clone"></i> Copiar Alias
+      </button>
+
+      <button class="link" onclick="mostrarDatos()">
+        <i class="fas fa-info-circle"></i> Datos de la cuenta
+      </button>
+    </div>
+
+    <!-- Resto de los botones -->
+    <a class="link" href="https://www.instagram.com/santoriniclothes.sc/" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a class="link" href="https://wa.me/5493536568085" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp Directo
+    </a>
+
+    <a class="link" href="santoriniclothes.vcf" download>
+      <i class="fas fa-address-card"></i> Guardar Contacto
+    </a>
+
+    <a class="link" href="https://www.santoriniclothes.com.ar" target="_blank">
+      <i class="fas fa-store"></i> Web
+    </a>
+
+    <a class="link" href="https://maps.google.com?q=9+de+Julio+629+Villa+María+Córdoba" target="_blank">
+      <i class="fas fa-map-marker-alt"></i> Ubicación
+    </a>
+
+    <a class="link" href="#" target="_blank">
+      <i class="fas fa-credit-card"></i> Formas de Pago
+    </a>
+
+    <a class="link" href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank">
+      <i class="fas fa-star"></i> Dejá tu reseña en Google
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Creado por <strong>MAOBE Digital</strong>
+  </footer>
+
+  <!-- Mensajes flotantes -->
+  <div id="copied-msg">✅ Alias copiado: SANTORINICLOTHES</div>
+
+  <div id="datos-msg">
+    🧾 <strong>Titular:</strong> Nadia Macarena Sequeira<br>
+    🆔 <strong>CUIL:</strong> 27-39018932-7<br>
+    🏦 <strong>Banco:</strong> Naranja X
+  </div>
+
+  <script>
+    function copiarAlias() {
+      navigator.clipboard.writeText("SANTORINICLOTHES").then(() => {
+        const msg = document.getElementById("copied-msg");
+        msg.style.display = "block";
+        setTimeout(() => { msg.style.display = "none"; }, 2500);
+      });
+    }
+
+    function mostrarDatos() {
+      const msg = document.getElementById("datos-msg");
+      msg.style.display = "block";
+      setTimeout(() => { msg.style.display = "none"; }, 3500);
+    }
+  </script>
+</body>
+</html>
